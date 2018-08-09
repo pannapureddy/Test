@@ -28,7 +28,7 @@ pipeline {
             }
             steps {
                 sh "npm config ls"
-                sh "echo 'Development'"
+                sh "echo 'Production'"
                 sh "npm install"
                 sh "npm start"
             }
