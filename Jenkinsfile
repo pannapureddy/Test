@@ -1,6 +1,6 @@
 node {
   stage('Checkout') {
-      git url: env.GITBUCKET_URL + "/wey-yu/hello.git", branch: env.BRANCH_NAME
+      git url: "git@github.com:pannapureddy/Test.git", branch: "master"
   }
  
   stage('Build') {
