@@ -18,7 +18,6 @@ pipeline {
                 sh "npm config ls"
                 sh "echo 'Development'"
                 sh "npm install"
-                sh "npm start"
             }
         }
 
@@ -30,7 +29,6 @@ pipeline {
                 sh "npm config ls"
                 sh "echo 'Production'"
                 sh "npm install"
-                sh "npm start"
             }
         }
     }
