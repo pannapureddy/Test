@@ -10,7 +10,7 @@ pipeline {
             }
         }
 
-        stage ('Pre Deployment') {
+        stage('build') {
             steps {
                 sh "npm config ls"
                 sh "npm install"
