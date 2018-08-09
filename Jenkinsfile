@@ -1,6 +1,6 @@
 node {
   stage('Checkout') {
-      sh "eval \$5(ssh-agent -s)"
+      sh "eval ssh-agent -s"
       sh "ssh-add -K ~/.ssh/id_rsa"
       git url: "git@github.com:pannapureddy/Test.git", branch: "develop"
   }
