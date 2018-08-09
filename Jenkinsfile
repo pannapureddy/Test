@@ -10,9 +10,25 @@ pipeline {
             }
         }
 
-        stage('Build') {
+        stage('Development') {
+            when {
+                branch 'develop'
+            }
             steps {
                 sh "npm config ls"
+                sh "echo 'Development'"
+                sh "npm install"
+                sh "npm start"
+            }
+        }
+
+        stage('Production') {
+            when {
+                branch 'master'
+            }
+            steps {
+                sh "npm config ls"
+                sh "echo 'Development'"
                 sh "npm install"
                 sh "npm start"
             }
