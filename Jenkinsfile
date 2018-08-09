@@ -6,11 +6,9 @@ node {
     }
 
     stage('Build') {
-        steps {
-            nodejs(nodeJSInstallationName: 'Node 6.x', configId: '<config-file-provider-id>') {
-                sh "npm install"
-                sh "npm test"
-            }
+        nodejs(nodeJSInstallationName: 'Node 6.x', configId: '<config-file-provider-id>') {
+            sh "npm install"
+            sh "npm test"
         }
     }
 }
