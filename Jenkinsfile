@@ -6,7 +6,7 @@ node {
     }
 
     stage('Build') {
-        nodejs(nodeJSInstallationName: 'Node 10.8.0', configId: '<config-file-provider-id>') {
+        withNpm(npmConfig: 'my-custom-npmrc') {
             sh "npm install"
             sh "npm test"
         }
