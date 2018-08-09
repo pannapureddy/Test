@@ -1,7 +1,7 @@
 node {
   stage('Checkout') {
       sh "eval ssh-agent -s"
-      sh "ssh-add -K /Users/Shared/Jenkins/.ssh/id_rsa"
+      sh "ssh-add -K /Users/Shared/Jenkins/.ssh/id_rsa.pub"
       git url: "git@github.com:pannapureddy/Test.git", branch: "develop"
   }
 
