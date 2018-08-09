@@ -14,7 +14,7 @@ pipeline {
             steps {
                 sh "npm config ls"
                 sh "npm install"
-                sh "npm test"
+                sh "npm start"
             }
         }
     }
