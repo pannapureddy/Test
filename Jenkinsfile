@@ -5,8 +5,15 @@ pipeline {
         stage('Checkout') {
             steps {
                 sshagent(['bf5144c870928000792010f351c52a8d050f8dbd']) {
-                    git url: "git@github.com:pannapureddy/Test.git", branch: "develop"
+                    git url: "git@github.com:pannapureddy/Test.git"
                 }
+            }
+        }
+
+        stage ('Pre Deployment') {
+            steps {
+                sh "npm config ls"
+                sh "npm install"
             }
         }
 
@@ -15,9 +22,7 @@ pipeline {
                 branch 'develop'
             }
             steps {
-                sh "npm config ls"
                 sh "echo 'Development'"
-                sh "npm install"
             }
         }
 
@@ -26,9 +31,7 @@ pipeline {
                 branch 'master'
             }
             steps {
-                sh "npm config ls"
                 sh "echo 'Production'"
-                sh "npm install"
             }
         }
     }
