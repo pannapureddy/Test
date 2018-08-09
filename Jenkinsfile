@@ -8,10 +8,7 @@ node {
     stage('Build') {
         agent any
         steps {
-            withNpm(npmConfig: 'my-custom-npmrc') {
-                sh "npm install"
-                sh "npm test"
-            }
+            echo "DO NPM STUFF....."
         }
     }
 }
