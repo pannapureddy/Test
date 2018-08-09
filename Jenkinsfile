@@ -1,6 +1,8 @@
 node {
   stage('Checkout') {
-      git url: "git@github.com:pannapureddy/Test.git", branch: "master"
+      sh "eval $(ssh-agent -s)"
+      sh "ssh-add -K ~/.ssh/id_rsa"
+      git url: "git@github.com:pannapureddy/Test.git", branch: "develop"
   }
 
 
