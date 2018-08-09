@@ -7,8 +7,6 @@ node {
 
     stage('Build') {
         agent any
-        steps {
-            echo "DO NPM STUFF....."
-        }
+        sh "echo `DO NPM STUFF.....`"
     }
 }
