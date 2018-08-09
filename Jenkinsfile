@@ -6,9 +6,12 @@ node {
     }
 
     stage('Build') {
-        withNpm(npmConfig: 'my-custom-npmrc') {
-            sh "npm install"
-            sh "npm test"
+        agent any
+        steps {
+            withNpm(npmConfig: 'my-custom-npmrc') {
+                sh "npm install"
+                sh "npm test"
+            }
         }
     }
 }
